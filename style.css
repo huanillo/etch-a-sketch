@@ -1,18 +1,17 @@
 #grid {
     display: flex;
+    flex-wrap: wrap;
     width: 960px;
     height: 960px;
-    gap: 1px;
-    flex-direction: row;
+    border: 1px solid red;
+    flex-flow: row wrap;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: stretch;
     border: 1px solid red;
 }
 .square {
     background-color: lightblue;
-    width: 960px;
-    height: 960px;
+    box-sizing: border-box;
     border: 1px solid;
 
 }

@@ -1,9 +1,14 @@
 function createSquare(num){
     const grid = document.querySelector("#grid");
-    for (let i = 0; i < num; i++){
+
+    let squareSize = 960 / num;
+
+    for (let i = 0; i < num * num ; i++){
         // create a new div element
         const div = document.createElement("div");
         div.className = "square";
+        div.style.width = `${squareSize}px`;
+        div.style.height = `${squareSize}px`;
         grid.appendChild(div);
     }
 }
