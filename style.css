@@ -1,0 +1,14 @@
+#grid {
+    display: flex;
+    width: 960px;
+    height: 960px;
+    gap: 1px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+.square {
+    border: 1px solid;
+    flex-grow: 1;
+
+}
