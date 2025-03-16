@@ -1,7 +1,7 @@
 function createSquare(num){
     const grid = document.querySelector("#grid");
     clearGrid(); //clear the grid before adding new squares
-    let squareSize = 960 / num;
+    let squareSize = 960 / num; //adjust the size depending of the num of squares
 
     for (let i = 0; i < num * num ; i++){
         // create a new div element
@@ -13,25 +13,24 @@ function createSquare(num){
         div.addEventListener("mouseover", () => {
         div.style.background = "rgb(59, 59, 59)";
         });
-
         grid.appendChild(div);
     }
 }
 document.querySelector("#askUser").addEventListener("click", () => {
     let squares = prompt("How many squares?");
     
-    if (squares === null || isNaN(squares) || squares <= 0) {
-        alert("Please enter a valid number.");
+    if (squares === null || isNaN(squares) || squares <= 0 || squares >= 100) {
+        alert("Please enter a valid number (1-100).");
         return;
     }
-    
-    createSquare(Number(squares)); // Call to the function passing it the number of squares
+    // Call to the function passing it the number of squares
+    createSquare(Number(squares)); 
 });
 
 function clearGrid() {
     const grid = document.querySelector("#grid");
-
-    while (grid.firstChild) {
+    // Cleans until there is no more "child", so there are no more squares to clean
+    while (grid.firstChild) { 
         grid.removeChild(grid.firstChild);
     }
 }
