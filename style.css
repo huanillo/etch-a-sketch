@@ -1,11 +1,30 @@
+body{
+    display: flex;
+    justify-content: center;
+}
 #grid {
     display: flex;
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
-    border: 1px solid red;
+    border: 2px solid rgb(144, 90, 90);
+    flex-shrink: 0;
 }
 .square {
     background-color: lightblue;
     box-sizing: border-box;
+}
+button {
+    width: 120px;
+    height: 25px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    background-color: wheat;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+button:hover {
+    background-color: #c1b48a; /* Cambio de color en hover */
 }
