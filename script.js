@@ -23,7 +23,7 @@ function createSquare(num){
     }
 }
 document.querySelector("#askUser").addEventListener("click", () => {
-    let squares = prompt("How many squares?");
+    let squares = prompt("How many squares per side?");
     
     if (squares === null || isNaN(squares) || squares <= 0 || squares > 100) {
         alert("Please enter a valid number (1-100).");
