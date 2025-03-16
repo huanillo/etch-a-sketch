@@ -9,9 +9,15 @@ function createSquare(num){
         div.className = "square";
         div.style.width = `${squareSize}px`;
         div.style.height = `${squareSize}px`;
+        div.style.backgroundColor = "black";
+        div.style.opacity = "0"; // Starting opacity 0
         //add hover effect
         div.addEventListener("mouseover", () => {
-        div.style.background = "rgb(59, 59, 59)";
+            let currentOpacity = parseFloat(div.style.opacity) || 0; // If there is no opacity, starts in 0
+
+            if (currentOpacity < 1) {
+                div.style.opacity = currentOpacity + 0.1; // Increments 0.1
+            }
         });
         grid.appendChild(div);
     }
@@ -19,7 +25,7 @@ function createSquare(num){
 document.querySelector("#askUser").addEventListener("click", () => {
     let squares = prompt("How many squares?");
     
-    if (squares === null || isNaN(squares) || squares <= 0 || squares >= 100) {
+    if (squares === null || isNaN(squares) || squares <= 0 || squares > 100) {
         alert("Please enter a valid number (1-100).");
         return;
     }
@@ -34,8 +40,4 @@ function clearGrid() {
         grid.removeChild(grid.firstChild);
     }
 }
-document.querySelectorAll(".square").forEach(square => {
-    square.addEventListener("mouseover", () => {
-        square.style.background = "rgb(59, 59, 59)";
-    });
-});
+

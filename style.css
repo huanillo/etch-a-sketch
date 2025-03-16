@@ -4,14 +4,8 @@
     width: 960px;
     height: 960px;
     border: 1px solid red;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    border: 1px solid red;
 }
 .square {
     background-color: lightblue;
     box-sizing: border-box;
-    border: 1px solid;
-
 }
