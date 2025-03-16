@@ -1,6 +1,6 @@
 function createSquare(num){
     const grid = document.querySelector("#grid");
-
+    clearGrid(); //clear the grid before adding new squares
     let squareSize = 960 / num;
 
     for (let i = 0; i < num * num ; i++){
@@ -9,6 +9,11 @@ function createSquare(num){
         div.className = "square";
         div.style.width = `${squareSize}px`;
         div.style.height = `${squareSize}px`;
+        //add hover effect
+        div.addEventListener("mouseover", () => {
+        div.style.background = "rgb(59, 59, 59)";
+        });
+
         grid.appendChild(div);
     }
 }
@@ -20,6 +25,18 @@ document.querySelector("#askUser").addEventListener("click", () => {
         return;
     }
     
-    createSquare(Number(squares)); // Llamamos a la función pasando el número
+    createSquare(Number(squares)); // Call to the function passing it the number of squares
 });
 
+function clearGrid() {
+    const grid = document.querySelector("#grid");
+
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+}
+document.querySelectorAll(".square").forEach(square => {
+    square.addEventListener("mouseover", () => {
+        square.style.background = "rgb(59, 59, 59)";
+    });
+});
