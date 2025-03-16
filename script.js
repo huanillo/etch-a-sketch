@@ -41,3 +41,4 @@ function clearGrid() {
     }
 }
 
+createSquare(16); // Creates an initial 16x16 grid
